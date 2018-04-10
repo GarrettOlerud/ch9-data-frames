@@ -3,7 +3,7 @@
 # Create a vector of 100 employees ("Employee 1", "Employee 2", ... "Employee 100")
 # Hint: use the `paste()` function and vector recycling to add a number to the word
 # "Employee"
-workers <- paste("employee", 1:100)
+workers <- paste("Employee", 1:100)
 
 # Create a vector of 100 random salaries for the year 2017
 # Use the `runif()` function to pick random numbers between 40000 and 50000
@@ -16,12 +16,13 @@ salaries_2018 <- paste(salaries_2017, runif(100, min = -5000, max = 10000))
 
 # Create a data frame 'salaries' by combining the 3 vectors you just made
 # Remember to set `stringsAsFactors=FALSE`!
-
+salaries <- data.frame(c(salaries_2017, salaries_2018, workers,
+                         "stringsasFactors=false"))
 
 # Create a column 'change' that stores each person's change in salary between
 # 2017 and 2018
 
-
+salaries$change <- salaries_2018 - salaries_2017
 # Create a column 'got_raise' that is TRUE if the person got a raise (their
 # salary went up)
 
